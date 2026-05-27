@@ -106,7 +106,7 @@ kafka               Event broker for patient events
 
 ## Run Locally
 
-Start the full stack:
+Start the app:
 
 ```bash
 docker compose up --build
@@ -118,7 +118,7 @@ Open:
 http://localhost:8080
 ```
 
-Stop the stack:
+Stop the app:
 
 ```bash
 docker compose down
@@ -132,7 +132,7 @@ docker compose down -v
 
 ## Smoke Test
 
-With the local stack running:
+With the app running locally:
 
 ```bash
 ./scripts/smoke-test.sh
@@ -146,7 +146,7 @@ The smoke test verifies login, patient list, patient create, and patient delete.
 - API Gateway protects patient routes with JWT validation
 - gRPC integration between patient and billing services
 - Kafka integration for asynchronous patient events
-- Dockerized stack for repeatable local execution
+- Dockerized setup for repeatable local execution
 
 ## Future Roadmap
 
