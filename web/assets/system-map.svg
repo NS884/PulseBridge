@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 360" role="img" aria-labelledby="title desc">
+  <title id="title">Patient platform service map</title>
+  <desc id="desc">Website routes through the API gateway to auth, patient, billing, analytics, PostgreSQL, and Kafka services.</desc>
+  <rect width="560" height="360" rx="16" fill="#f8fafc"/>
+  <g fill="none" stroke="#9aa8b6" stroke-width="3" stroke-linecap="round">
+    <path d="M280 97v50"/>
+    <path d="M280 207v49"/>
+    <path d="M213 178h-77"/>
+    <path d="M347 178h77"/>
+    <path d="M136 219v37"/>
+    <path d="M424 219v37"/>
+  </g>
+  <g font-family="Inter, Arial, sans-serif" text-anchor="middle">
+    <g>
+      <rect x="190" y="32" width="180" height="66" rx="12" fill="#18262b"/>
+      <text x="280" y="60" fill="#ffffff" font-size="17" font-weight="700">Hosted Website</text>
+      <text x="280" y="82" fill="#b7c6ce" font-size="13">Nginx static app</text>
+    </g>
+    <g>
+      <rect x="213" y="146" width="134" height="64" rx="12" fill="#1b8a6b"/>
+      <text x="280" y="174" fill="#ffffff" font-size="17" font-weight="700">Gateway</text>
+      <text x="280" y="195" fill="#d6f6e9" font-size="13">Spring Cloud</text>
+    </g>
+    <g>
+      <rect x="40" y="146" width="136" height="72" rx="12" fill="#246b8f"/>
+      <text x="108" y="175" fill="#ffffff" font-size="16" font-weight="700">Auth</text>
+      <text x="108" y="197" fill="#d9eef7" font-size="13">JWT login</text>
+    </g>
+    <g>
+      <rect x="384" y="146" width="136" height="72" rx="12" fill="#6d5e2e"/>
+      <text x="452" y="175" fill="#ffffff" font-size="16" font-weight="700">Patients</text>
+      <text x="452" y="197" fill="#f0e8c8" font-size="13">REST API</text>
+    </g>
+    <g>
+      <rect x="48" y="256" width="120" height="56" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+      <text x="108" y="280" fill="#17202a" font-size="15" font-weight="700">Postgres</text>
+      <text x="108" y="300" fill="#637083" font-size="12">Users</text>
+    </g>
+    <g>
+      <rect x="220" y="256" width="120" height="56" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+      <text x="280" y="280" fill="#17202a" font-size="15" font-weight="700">Billing</text>
+      <text x="280" y="300" fill="#637083" font-size="12">gRPC</text>
+    </g>
+    <g>
+      <rect x="392" y="256" width="120" height="56" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+      <text x="452" y="280" fill="#17202a" font-size="15" font-weight="700">Kafka</text>
+      <text x="452" y="300" fill="#637083" font-size="12">Analytics</text>
+    </g>
+  </g>
+</svg>

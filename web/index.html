@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Patient Platform</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <div class="shell">
+      <aside class="sidebar" aria-label="Application">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true">P</span>
+          <div>
+            <p class="eyebrow">Spring Microservices</p>
+            <h1>Patient Platform</h1>
+          </div>
+        </div>
+
+        <div class="session-card">
+          <p class="label">Signed in as</p>
+          <strong id="sessionEmail">Not signed in</strong>
+          <button id="logoutButton" class="ghost-button" type="button">Sign out</button>
+        </div>
+
+        <img class="system-map" src="/assets/system-map.svg" alt="API gateway connected to auth, patient, billing, analytics, PostgreSQL, and Kafka services">
+
+        <dl class="service-list">
+          <div>
+            <dt>Website</dt>
+            <dd>Nginx</dd>
+          </div>
+          <div>
+            <dt>Gateway</dt>
+            <dd>Spring Cloud</dd>
+          </div>
+          <div>
+            <dt>Events</dt>
+            <dd>Kafka</dd>
+          </div>
+        </dl>
+      </aside>
+
+      <main class="workspace">
+        <section class="topbar" aria-label="Status">
+          <div>
+            <p class="eyebrow">Workspace</p>
+            <h2>Patients</h2>
+          </div>
+          <div class="status-strip" aria-live="polite">
+            <span id="authStatus" class="status-pill pending">Auth</span>
+            <span id="patientStatus" class="status-pill pending">Patient API</span>
+            <span id="gatewayStatus" class="status-pill pending">Gateway</span>
+          </div>
+        </section>
+
+        <section id="loginPanel" class="panel auth-panel">
+          <form id="loginForm" class="auth-form">
+            <div>
+              <p class="eyebrow">Access</p>
+              <h2>Sign in</h2>
+            </div>
+            <label>
+              Email
+              <input id="email" name="email" type="email" value="testuser@test.com" autocomplete="username" required>
+            </label>
+            <label>
+              Password
+              <input id="password" name="password" type="password" value="password123" autocomplete="current-password" required>
+            </label>
+            <button class="primary-button" type="submit">Sign in</button>
+          </form>
+        </section>
+
+        <section id="appPanel" class="app-grid hidden">
+          <div class="panel table-panel">
+            <div class="panel-heading">
+              <div>
+                <p class="eyebrow">Registry</p>
+                <h2>Patient Records</h2>
+              </div>
+              <div class="toolbar">
+                <input id="searchInput" class="search-input" type="search" placeholder="Search records" aria-label="Search patient records">
+                <button id="refreshButton" class="secondary-button" type="button">Refresh</button>
+              </div>
+            </div>
+
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Date of Birth</th>
+                    <th>Address</th>
+                    <th class="actions-column">Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="patientsTable"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <form id="patientForm" class="panel editor-panel">
+            <div class="panel-heading">
+              <div>
+                <p class="eyebrow">Record</p>
+                <h2 id="formTitle">New Patient</h2>
+              </div>
+              <button id="resetFormButton" class="ghost-button" type="button">Clear</button>
+            </div>
+
+            <input id="patientId" type="hidden">
+
+            <label>
+              Name
+              <input id="name" name="name" type="text" maxlength="100" required>
+            </label>
+            <label>
+              Email
+              <input id="patientEmail" name="patientEmail" type="email" required>
+            </label>
+            <label>
+              Date of Birth
+              <input id="dateOfBirth" name="dateOfBirth" type="date" required>
+            </label>
+            <label>
+              Registered Date
+              <input id="registeredDate" name="registeredDate" type="date" required>
+            </label>
+            <label>
+              Address
+              <textarea id="address" name="address" rows="4" required></textarea>
+            </label>
+
+            <button class="primary-button" type="submit">Save record</button>
+          </form>
+        </section>
+
+        <p id="message" class="message" role="status" aria-live="polite"></p>
+      </main>
+    </div>
+
+    <script src="/app.js" defer></script>
+  </body>
+</html>
